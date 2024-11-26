@@ -15,8 +15,8 @@ import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
-import HeaderPayment from "./headerPayment";
 import { BASE_API } from "src/services/api";
+import HeaderPayment from "./headerPayment";
 
 export default function PaymentBegin() {
 
@@ -59,7 +59,7 @@ export default function PaymentBegin() {
                     '/wallet/request-top-up-wallet-with-payos',
                     {
                         returnUrl: "https://vga-payment.vercel.app/Payment/result",
-                        cancelUrl: "https://vga-payment.vercel.app/Payment/result",
+                        cancelUrl: "https://vga-payment.npvercel.app/Payment/result",
                     },
                     {
                         params: {
