@@ -43,15 +43,15 @@ export default function Payment() {
                         width: {
                             xs: '100%', // Mobile
                             sm: '75%',  // Tablet
-                            md: '50%',  // Desktop
+                            md: '52%',  // Desktop
                         },
                     }}
                 >
                     <Box>
                         <img
-                            src="https://contentgarena-a.akamaihd.net/GOP/newshop_banners/EDFD8F8D399786C0.jpg?v=1731394594"
+                            src="https://payos.vn/wp-content/uploads/sites/13/2023/08/Untitled.gif"
                             alt="loading"
-                            style={{ height: '50%' }}
+                            style={{ height: '400px', width: '100%' }}
                         />
                     </Box>
                     <Box sx={{ textAlign: 'center', my: '10px' }}>
@@ -87,7 +87,7 @@ export default function Payment() {
                                                 }}
                                             >
                                                 <img
-                                                    src="https://contentgarena-a.akamaihd.net/GOP/newshop_banners/EDFD8F8D399786C0.jpg?v=1731394594"
+                                                    src="https://th.bing.com/th/id/OIP.0iYBEdVaYdPMDpx35nD4vAAAAA?rs=1&pid=ImgDetMain"
                                                     alt="chưa có"
                                                     style={{
                                                         width: '100px',
@@ -129,7 +129,7 @@ export default function Payment() {
                                                 }}
                                             >
                                                 <img
-                                                    src="https://contentgarena-a.akamaihd.net/GOP/newshop_banners/EDFD8F8D399786C0.jpg?v=1731394594"
+                                                    src="https://payos.vn/wp-content/uploads/sites/13/2023/08/Untitled.gif"
                                                     alt="chưa có"
                                                     style={{
                                                         width: '100px',

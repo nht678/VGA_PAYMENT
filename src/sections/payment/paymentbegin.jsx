@@ -89,20 +89,25 @@ export default function PaymentBegin() {
         <Box>
             <HeaderPayment />
             <Box style={{ display: 'flex', justifyContent: 'center' }}>
-                <Box sx={{ width: '50%' }}>
+                <Box
+                    sx={{
+                        width: {
+                            xs: '100%', // Mobile
+                            sm: '75%',  // Tablet
+                            md: '52%',  // Desktop
+                        },
+                    }}
+                >
                     <Box>
                         <img
-                            src="https://contentgarena-a.akamaihd.net/GOP/newshop_banners/EDFD8F8D399786C0.jpg?v=1731394594"
+                            src="https://payos.vn/wp-content/uploads/sites/13/2023/08/Untitled.gif"
                             alt="loading"
-                            style={{ height: '50%' }}
+                            style={{ height: '400px', width: '100%' }}
                         />
-                    </Box>
-                    <Box>
-                        QR pay
                     </Box>
                     <Grid container spacing={2}>
                         {/* Left Section */}
-                        <Grid size={{ md: 6 }} container>
+                        <Grid size={{ md: 6, xs: 12 }} container>
                             <RadioGroup style={{ width: '100%' }}>
                                 {items.map((item, index) => (
                                     <Grid
@@ -133,7 +138,7 @@ export default function PaymentBegin() {
                                         </Grid>
                                         <Grid size={{ md: 5 }}>
                                             <Typography variant="body1" sx={{ fontWeight: 'bold', color: '#424242' }}>
-                                                {item.price}
+                                                {item.price.toLocaleString('vi-VN')} VND
                                             </Typography>
                                         </Grid>
                                         <Grid size={{ md: 6 }}>
@@ -148,7 +153,7 @@ export default function PaymentBegin() {
 
                         {/* Right Section */}
                         <Grid size={{ md: 6 }} container>
-                            <Grid size={{ md: 12 }} container>
+                            <Grid size={{ md: 12, xs: 12 }} container>
                                 <Typography variant="h6">Chi tiết giao dịch</Typography>
                             </Grid>
                             <Grid size={{ md: 12 }} container>
@@ -171,7 +176,7 @@ export default function PaymentBegin() {
                                 </Grid>
                                 <Grid size={{ md: 6 }}>
                                     <Typography variant="body1" sx={{ fontWeight: 'bold', color: '#424242' }}>
-                                        {selectedRow !== null ? items[selectedRow].price : '-'}
+                                        {selectedRow !== null ? `${items[selectedRow].price.toLocaleString('vi-VN')} VND` : '-'}
                                     </Typography>
                                 </Grid>
                             </Grid>
