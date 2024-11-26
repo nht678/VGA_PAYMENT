@@ -129,7 +129,7 @@ export default function Payment() {
                                                 }}
                                             >
                                                 <img
-                                                    src="https://payos.vn/wp-content/uploads/sites/13/2023/08/Untitled.gif"
+                                                    src="https://hoimesach.com/wp-content/uploads/2021/11/nap-diem.jpg"
                                                     alt="chưa có"
                                                     style={{
                                                         width: '100px',

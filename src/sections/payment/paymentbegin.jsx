@@ -57,8 +57,8 @@ export default function PaymentBegin() {
                 const res = await axios.post(
                     'https://vgasystem-emf5a7bqfec2fjh9.southeastasia-01.azurewebsites.net/api/v1/wallet/request-top-up-wallet-with-payos',
                     {
-                        returnUrl: "vga-payment-qt992zzqy-nhat679s-projects.vercel.app/Payment/result",
-                        cancelUrl: "vga-payment-qt992zzqy-nhat679s-projects.vercel.app/Payment/result",
+                        returnUrl: "https://vga-payment.vercel.app/Payment/result",
+                        cancelUrl: "https://vga-payment.vercel.app/Payment/result",
                     },
                     {
                         params: {
