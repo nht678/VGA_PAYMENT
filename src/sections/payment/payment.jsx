@@ -87,7 +87,7 @@ export default function Payment() {
                                                 }}
                                             >
                                                 <img
-                                                    src="https://th.bing.com/th/id/OIP.0iYBEdVaYdPMDpx35nD4vAAAAA?rs=1&pid=ImgDetMain"
+                                                    src="https://hoimesach.com/wp-content/uploads/2021/11/nap-diem.jpg"
                                                     alt="chưa có"
                                                     style={{
                                                         width: '100px',
