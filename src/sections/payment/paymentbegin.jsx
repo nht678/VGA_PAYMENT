@@ -16,6 +16,7 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
 import HeaderPayment from "./headerPayment";
+import { BASE_API } from "src/services/api";
 
 export default function PaymentBegin() {
 
@@ -54,8 +55,8 @@ export default function PaymentBegin() {
                 console.log("formData", formData);
 
                 // Gọi API thanh toán
-                const res = await axios.post(
-                    'https://vgasystem-emf5a7bqfec2fjh9.southeastasia-01.azurewebsites.net/api/v1/wallet/request-top-up-wallet-with-payos',
+                const res = await BASE_API.post(
+                    '/wallet/request-top-up-wallet-with-payos',
                     {
                         returnUrl: "https://vga-payment.vercel.app/Payment/result",
                         cancelUrl: "https://vga-payment.vercel.app/Payment/result",
