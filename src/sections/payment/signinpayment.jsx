@@ -51,17 +51,8 @@ export default function SigninPayment() {
         <>
             <HeaderPayment />
 
-            <div className="flex min-h-full flex-1 flex-col px-6 py-12 lg:px-8">
+            <div className="flex min-h-full flex-1 flex-col px-6 py-12 lg:px-8 lg:justify-center">
                 <div className="sm:mx-auto sm:w-full sm:max-w-sm contents ">
-                    {/* <img
-                        alt="Your Company"
-                        src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600"
-                        className="mx-auto h-10 w-auto"
-                    /> */}
-                    {/* <Typography className="mx-auto h-10 w-auto text-center mt-0" variant="h6" noWrap component="div" sx={{ color: 'rgba(99,102,241,1)' }} >
-                        VGA
-                    </Typography> */}
-
                     <h2 className="mt-0 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
                         Đăng nhập
                     </h2>
