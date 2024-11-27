@@ -59,7 +59,7 @@ export default function PaymentBegin() {
                     '/wallet/request-top-up-wallet-with-payos',
                     {
                         returnUrl: "https://vga-payment.vercel.app/Payment/result",
-                        cancelUrl: "https://vga-payment.npvercel.app/Payment/result",
+                        cancelUrl: "https://vga-payment.vercel.app/Payment/result",
                     },
                     {
                         params: {
