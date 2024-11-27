@@ -74,7 +74,7 @@ export default function Router() {
     },
     {
       path: 'payment',
-      element: < PaymentPage />,
+      element: <PaymentPage />,
     },
     {
       path: 'signinpayment',

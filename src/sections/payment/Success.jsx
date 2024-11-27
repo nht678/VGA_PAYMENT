@@ -42,7 +42,7 @@ const PaymentSuccess = () => {
             {`${query.status === "CANCELLED" ? 'Bạn đã huỷ thanh toán đơn hàng,cảm ơn bạn đã sử dụng dịch vụ của chúng tôi' : 'Đơn hàng của bạn đã được thanh toán thành công. Cảm ơn bạn đã sử dụng dịch vụ của chúng tôi.'} !!`}
           </p>
         </div>
-        <Link to='payment'>
+        <Link to='/payment'>
           <Button
           >
             Về trang chủ
