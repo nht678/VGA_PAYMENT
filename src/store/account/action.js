@@ -48,10 +48,10 @@ export function signinUser(data, navigate) {
 export function signinUserStudent(data, navigate) {
     return async (dispatch) => {
         try {
+            navigate('/paymentbegin', { replace: true });
             const response = await accountService.login(data);
             if (response.status === 200) {
                 message.success('Đăng nhập thành công');
-                navigate('/paymentbegin', { replace: true });
                 dispatch(actLogin(response.data));
             } else {
                 message.error('Đăng nhập thất bại');
@@ -76,8 +76,7 @@ export function signoutUserStudent(accountId, navigate) {
     const token = localStorage.getItem('token');
     return async (dispatch) => {
         try {
-            // dispatch(actSignOut());
-            // Trả về Promise của accountService.logout
+            navigate('/signinpayment', { replace: true });
             const response = await accountService.logout(accountId, token);
             if (response.status === 200) {
                 message.success('Đăng xuất thành công');
@@ -87,7 +86,6 @@ export function signoutUserStudent(accountId, navigate) {
                 localStorage.removeItem('name');
                 localStorage.removeItem('role');
                 localStorage.removeItem('accountId');
-                navigate('/signinpayment', { replace: true });
             } else {
                 message.error('Đăng xuất thất bại');
             }

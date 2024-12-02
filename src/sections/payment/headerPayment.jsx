@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import Box from '@mui/material/Box';
 import { Typography, Button } from '@mui/material';
 import { Link, useNavigate } from 'react-router-dom';
@@ -29,15 +29,25 @@ export default function HeaderPayment() {
     const handleLogout = (e) => {
         e.preventDefault();
         dispatch(signoutUserStudent(accountId, navigate));
-        // navigate('/signin', { replace: true });
-        // message.success('Đăng xuất thành công');
 
     };
 
-    const userNavigation = [
-        { name: 'Đăng nhập', href: '/signinpayment' },
-        { name: 'Đăng xuất', onClick: 'logout' },
-    ]
+    // const userNavigation = [
+    //     { name: 'Đăng nhập', href: '/signinpayment' },
+    //     { name: 'Đăng xuất', onClick: 'logout' },
+    // ]
+
+    const userNavigation = role
+        ? [
+            { name: 'Đăng xuất', onClick: 'logout' },
+        ]
+        : [
+            { name: 'Đăng nhập', href: '/signinpayment' },
+        ];
+
+    useEffect(() => {
+
+    }, [role]); // Thêm role vào dependency array
 
     return (
         <Box sx={{ boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)", height: 70, display: 'flex', justifyContent: 'space-around', alignItems: 'center' }}>
