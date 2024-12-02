@@ -48,9 +48,9 @@ export function signinUser(data, navigate) {
 export function signinUserStudent(data, navigate) {
     return async (dispatch) => {
         try {
-            navigate('/paymentbegin', { replace: true });
             const response = await accountService.login(data);
             if (response.status === 200) {
+                navigate('/paymentbegin', { replace: true });
                 message.success('Đăng nhập thành công');
                 dispatch(actLogin(response.data));
             } else {
@@ -103,7 +103,7 @@ export function signoutUser(accountId, navigate) {
     return async (dispatch) => {
         try {
             dispatch(actSignOut());
-            // Trả về Promise của accountService.logout
+            navigate('/signin', { replace: true });
             const response = await accountService.logout(accountId, token);
             if (response.status === 200) {
                 message.success('Đăng xuất thành công');
@@ -113,7 +113,6 @@ export function signoutUser(accountId, navigate) {
                 localStorage.removeItem('name');
                 localStorage.removeItem('role');
                 localStorage.removeItem('accountId');
-                navigate('/signin', { replace: true });
             } else {
                 message.error('Đăng xuất thất bại');
             }
