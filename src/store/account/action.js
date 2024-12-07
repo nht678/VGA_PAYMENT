@@ -49,8 +49,9 @@ export function signinUserStudent(data, navigate) {
     return async (dispatch) => {
         try {
             const response = await accountService.login(data);
-            debugger
-            if (response.status === 200 && response?.data?.role === '2') {
+            console.log('response', response); // In ra để kiểm tra trong console của trình
+            console.log('response.data', response.data.role); // In ra để kiểm tra trong console của trình
+            if (response.status === 200 && response.data.role === 2) {
                 navigate('/paymentbegin', { replace: true });
                 message.success('Đăng nhập thành công');
                 dispatch(actLogin(response.data));
