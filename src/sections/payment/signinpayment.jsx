@@ -30,23 +30,11 @@ export default function SigninPayment() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log('Form data', formData);
         dispatch(signinUserStudent(formData, navigate));
-        // if (isAuthenticated)
-        // {
-        // message.success('Sign in successfully');
-        // }
-        // navigate('/', { replace: true });
     }
+    // let role = localStorage.getItem('role');
     // useEffect(() => {
-    //     if (isAuthenticated) {
-    //         navigate('/', { replace: true });
-    //         message.success('Đăng nhập thành công');
-    //     }
-    // }, [isAuthenticated]);
-
-
-
+    // }, [role]);
     return (
         <>
             <HeaderPayment />

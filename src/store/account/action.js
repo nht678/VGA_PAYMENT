@@ -49,21 +49,20 @@ export function signinUserStudent(data, navigate) {
     return async (dispatch) => {
         try {
             const response = await accountService.login(data);
-            if (response.status === 200) {
+            debugger
+            if (response.status === 200 && response?.data?.role === '2') {
                 navigate('/paymentbegin', { replace: true });
                 message.success('Đăng nhập thành công');
                 dispatch(actLogin(response.data));
+                localStorage.setItem('userInfo', JSON.stringify(response.data));
+                localStorage.setItem('token', response.data.accessToken);
+                localStorage.setItem('userId', response.data.userId);
+                localStorage.setItem('name', response.data.name);
+                localStorage.setItem('role', response.data.role);
+                localStorage.setItem('accountId', response.data.accountId);
             } else {
                 message.error('Đăng nhập thất bại');
             }
-            localStorage.setItem('userInfo', JSON.stringify(response.data));
-            localStorage.setItem('token', response.data.accessToken);
-            localStorage.setItem('userId', response.data.userId);
-            localStorage.setItem('name', response.data.name);
-            localStorage.setItem('role', response.data.role);
-            localStorage.setItem('accountId', response.data.accountId);
-            const userInfo = JSON.parse(localStorage.getItem('userInfo'));
-            console.log('userInfo', userInfo);
         }
         catch (error) {
             console.log('Error:', error); // In lỗi để kiểm tra
@@ -76,16 +75,16 @@ export function signoutUserStudent(accountId, navigate) {
     const token = localStorage.getItem('token');
     return async (dispatch) => {
         try {
+            localStorage.removeItem('userInfo');
+            localStorage.removeItem('token');
+            localStorage.removeItem('userId');
+            localStorage.removeItem('name');
+            localStorage.removeItem('role');
+            localStorage.removeItem('accountId');
             navigate('/signinpayment', { replace: true });
             const response = await accountService.logout(accountId, token);
             if (response.status === 200) {
                 message.success('Đăng xuất thành công');
-                localStorage.removeItem('userInfo');
-                localStorage.removeItem('token');
-                localStorage.removeItem('userId');
-                localStorage.removeItem('name');
-                localStorage.removeItem('role');
-                localStorage.removeItem('accountId');
             } else {
                 message.error('Đăng xuất thất bại');
             }

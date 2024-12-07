@@ -13,29 +13,6 @@ export default function Payment() {
 
     return (
         <Box>
-            {/* <Box sx={{ boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)", height: 70, display: 'flex', justifyContent: 'space-around', alignItems: 'center' }}>
-                <Link to="/payment">
-                    <Typography variant="h6" noWrap component="div" sx={{ display: { xs: 'none', sm: 'block' }, marginLeft: 2, color: 'rgba(99,102,241,1)' }} >
-                        VGA
-                    </Typography>
-                </Link>
-                <Button
-                    style={{
-                        height: '40px',
-                        padding: '0 16px',
-                        border: '1px solid #007BFF',
-                        borderRadius: '8px',
-                        fontSize: '16px',
-                        fontWeight: 'bold',
-                        cursor: 'pointer',
-                        transition: 'background-color 0.3s, transform 0.2s',
-                        backgroundColor: '#007BFF',
-                        color: '#fff',
-                    }}
-                >
-                    Đăng nhập
-                </Button>
-            </Box> */}
             <HeaderPayment />
             <Box style={{ display: 'flex', justifyContent: 'center' }}>
                 <Box

@@ -7,7 +7,6 @@ import { Image, message } from 'antd';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { signoutUserStudent } from '../../store/account/action';
 
 
@@ -15,20 +14,16 @@ const user = {
     name: 'Tom Cook',
     email: 'tom@example.com',
     imageUrl:
-        'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+        'https://th.bing.com/th/id/OIP.xyVi_Y3F3YwEIKzQm_j_jQHaHa?rs=1&pid=ImgDetMain',
 }
 
 export default function HeaderPayment() {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const { isAuthenticated } = useSelector((state) => state.accountReducer);
-    console.log('isAuthenticated1', isAuthenticated);
-
-    const accountId = localStorage.getItem('accountId');
-
-    const handleLogout = (e) => {
+    const handleLogout = async (e) => {
         e.preventDefault();
-        dispatch(signoutUserStudent(accountId, navigate));
+        await dispatch(signoutUserStudent(accountId, navigate));
 
     };
 
@@ -37,6 +32,9 @@ export default function HeaderPayment() {
     //     { name: 'Đăng xuất', onClick: 'logout' },
     // ]
 
+    let role = localStorage.getItem('role');
+    let accountId = localStorage.getItem('accountId');
+
     const userNavigation = role
         ? [
             { name: 'Đăng xuất', onClick: 'logout' },
@@ -44,10 +42,10 @@ export default function HeaderPayment() {
         : [
             { name: 'Đăng nhập', href: '/signinpayment' },
         ];
+    console.log('userNavigation', userNavigation);
 
     useEffect(() => {
-
-    }, [role]); // Thêm role vào dependency array
+    }, [role, accountId]); // Thêm role vào dependency array
 
     return (
         <Box sx={{ boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)", height: 70, display: 'flex', justifyContent: 'space-around', alignItems: 'center' }}>
@@ -79,15 +77,6 @@ export default function HeaderPayment() {
                 >
                     {userNavigation.map((item) => (
                         <MenuItem MenuItem key={item.name} >
-                            {/* {item.onClick ? (
-                                                        <Button
-                                                            sx={{ border: 'none' }}
-                                                            onClick={handleLogout}
-                                                            className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100"
-                                                        >
-                                                            {item.name}
-                                                        </Button>
-                                                    ) : ( */}
                             <Link
                                 to={item.href}
                                 onClick={item.name === 'Đăng xuất' ? handleLogout : null}
